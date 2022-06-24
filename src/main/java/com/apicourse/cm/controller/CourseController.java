@@ -2,6 +2,7 @@ package com.apicourse.cm.controller;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +13,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.apicourse.cm.pojo.Admin;
 import com.apicourse.cm.pojo.Course;
 import com.apicourse.cm.services.CourseService;
 @CrossOrigin(origins = "*")
@@ -35,6 +39,12 @@ public class CourseController
 	{
 		return service.getCourses();	
 	}
+	
+//	@RequestMapping(value="/courses/courseName/{courseName}")
+//	public List<Course> getCourseByName(@PathVariable String courseName)
+//	{
+//		return service.getCourseByName(courseName);	
+//	}
 	
 	@GetMapping ("/courses/{courseId}")
 	public Optional<Course> getCourses(@PathVariable String courseId)
@@ -83,5 +93,7 @@ public class CourseController
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	//==========FOR ADMIN METHODS===============
+	
 	
 }

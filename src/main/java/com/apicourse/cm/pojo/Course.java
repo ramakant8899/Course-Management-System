@@ -26,7 +26,7 @@ public class Course
 		this.courseImage = courseImage;
 	}
 
-	private int fee;
+	
 	
 	public Course() {
 		super();
@@ -72,30 +72,23 @@ public class Course
 		this.courseDuration = courseDuration;
 	}
 
-	public int getFee() 
-	{
-		return fee;
-	}
+	
 
-	public void setFee(int fee) 
-	{
-		this.fee = fee;
-	}
-
-	public Course(long id, String courseName, String courseDescription, String courseDuration, int fee) 
+	
+	public Course(long id, String courseName, String courseDescription, String courseDuration) 
 	{
 		super();
 		this.id = id;
 		this.courseName = courseName;
 		this.courseDescription = courseDescription;
 		this.courseDuration = courseDuration;
-		this.fee = fee;
+		
 	}
 
 	@Override
 	public String toString() {
 		return "Course [id=" + id + ", courseName=" + courseName + ", courseDescription=" + courseDescription
-				+ ", courseDuration=" + courseDuration + ", courseImage=" + courseImage + ", fee=" + fee + "]";
+				+ ", courseDuration=" + courseDuration + ", courseImage=" + courseImage + "]";
 	}
 	
 	

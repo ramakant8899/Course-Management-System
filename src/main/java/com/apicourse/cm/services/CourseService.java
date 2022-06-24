@@ -2,9 +2,13 @@ package com.apicourse.cm.services;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.apicourse.cm.dao.AdminRepo;
 import com.apicourse.cm.dao.CourseData;
+import com.apicourse.cm.pojo.Admin;
 import com.apicourse.cm.pojo.Course;
 
 
@@ -13,6 +17,8 @@ public class CourseService
 {
 	@Autowired
 	private CourseData data;
+	@Autowired
+	AdminRepo adminRepo;
 	
 	public List<Course> getCourses() 
 	{
@@ -43,4 +49,12 @@ public class CourseService
 	    data.delete(cms);
 	}
 
+//	public List<Course> getCourseByName(String courseName) 
+//	{
+//		return  data.findByName(courseName);
+//	}
+
+	
+
+	
 }
